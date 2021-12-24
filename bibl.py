@@ -11,12 +11,12 @@ def ask(url, data):
   return out
 
 
-#print(ask(ID, {'key' : KEY}))
-##result = requests.get('https://{}/netscan/'.format(BASE_URL),
+##result = requests.get('https://{}/factory/{}/map'.format(BASE_URL, ID),
 ##                      headers={'authorization' : KEY})
+##
+##print(result.json())
 
-result = requests.get('https://{}/factory/{}/map'.format(BASE_URL, ID),
+result = requests.get('https://{}/netscan'.format(BASE_URL),
                       headers={'authorization' : KEY})
-
 
 print(result.json())

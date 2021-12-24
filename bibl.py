@@ -89,6 +89,10 @@ while True:
   d = devices()['devices']
   print(len(d.keys()))
   for key in d.keys():
-     element = d[key]
-     print(element['type'], element['ip'], element['position'], element['SLC'])
+    element = d[key]
+    if element['type'] != 'drone' and element['type'] != 'door':
+      #print(element['type'], element['ip'], element['SLC'])
+      pass
+    else:
+      print(element['type'], element['ip'])
   time.sleep(2.0)

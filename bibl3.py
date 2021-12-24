@@ -34,6 +34,13 @@ def move(x=57, y=135, idd='ee7f:4e3f:8236:67d4:fe08:af2:6acf:ebaf'):
                                 "y": y})
   return result.json()
 
+def openn(idd='ee7f:4e3f:8236:67d4:fe08:af2:6acf:ebaf'):
+  result = requests.post( url='https://{}/devices/{}'.format(BASE_URL, idd),
+                        headers={'authorization' : KEY,
+                                 'content-type' : 'application/json'},
+                        json = {"actionType": "open"})
+  return result.json()
+
 def attack(player_server='ee7f:4e3f:8236:67d4:fe08:af2:6acf:ebaf',
            attack_server='2229:e7f8:8b3c:a4ef:644f:cb04:c6f6:52b0'):
   result = requests.post( url='https://{}/devices/{}'.format(BASE_URL, player_server),
@@ -79,3 +86,24 @@ def attack(player_server='ee7f:4e3f:8236:67d4:fe08:af2:6acf:ebaf',
 
 
 
+##net = netscan()['netscan']
+##for key in net.keys():
+##  mn = 0
+##  mn_ip = None
+##  for k in net[key].keys():
+##    element = net[key][k]
+##    print(element['type'], element['ip'], element['position'], element['SLC'])
+##
+##  print('______')
+
+
+
+#print(openn('3f9f:188c:d48f:cc55:8957:938b:25b6:3d09'))
+
+while True:
+  d = devices()['devices']
+  drone_id = '43dd:52a1:61c:d829:a8ec:bd05:23d4:284b'
+  x, y = d[drone_id]['position']['x'], d[drone_id]['position']['y']
+
+  print(move(x=x-1, y=y, idd=drone_id))
+  time.sleep(0.2)

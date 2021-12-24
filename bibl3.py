@@ -45,38 +45,30 @@ def attack(player_server='ee7f:4e3f:8236:67d4:fe08:af2:6acf:ebaf',
   return result.json()
 
 
-####while True:
-####  d_s = set()
-####  n_s = set()
-####
-####  net = netscan()['netscan']
-####  for key in net.keys():
-####    if key == 'c3ac:c93e:92b7:f23a:6fc4:69e6:ff43:3682':
-####      continue
-####    for k in net[key].keys():
-####      element = net[key][k]
-####      #print(element['type'], element['ip'], element['position'])
-####      for i in range(2):
-####        print(attack(key, k))
-####        time.sleep(0.2)
+#pprint.pprint(scan_map()['fields'][122])
+#pprint.pprint(attack())
+
+
 
 
 ##while True:
 ##  d_s = []
 ##  n_s = []
 ##
-##  d = devices()['devices']
-##  for key in d.keys():
-##    element = d[key]
-##    #print(element['ip'], element['position'])
-##    d_s.append(element['ip'])
-##
-##  net = netscan()['netscan']
-##  for key in net.keys():
-##    for k in net[key].keys():
-##      element = net[key][k]
-##      #print(element['type'], element['ip'], element['position'])
-##      n_s.append(element['ip'])
+####d = devices()['devices']
+####for key in d.keys():
+####  element = d[key]
+####  print(element['ip'], element['position'])
+####
+####while True:
+####  net = netscan()['netscan']
+####  key = 'c3ac:c93e:92b7:f23a:6fc4:69e6:ff43:3682'
+####  for k in net[key].keys():
+####    element = net[key][k]
+####    for i in range(5):
+####      print(attack(key, k))
+####      time.sleep(0.2)
+
 ##
 ##  for i in d_s:
 ##    for j in n_s:
@@ -85,10 +77,5 @@ def attack(player_server='ee7f:4e3f:8236:67d4:fe08:af2:6acf:ebaf',
 ##      print(attack(i, j))
 ##      time.sleep(0.5)
 
-while True:
-  d = devices()['devices']
-  print(len(d.keys()))
-  for key in d.keys():
-     element = d[key]
-     print(element['type'], element['ip'], element['position'], element['SLC'])
-  time.sleep(2.0)
+
+

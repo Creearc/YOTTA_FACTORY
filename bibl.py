@@ -18,7 +18,7 @@ def devices():
 
   return result.json()
 
-def move(x=57, y=135, idd=ee7f:4e3f:8236:67d4:fe08:af2:6acf:ebaf'):
+def move(x=57, y=135, idd='ee7f:4e3f:8236:67d4:fe08:af2:6acf:ebaf'):
   result = requests.post( url='https://{}/devices/{}'.format(BASE_URL, drone_id),
                         headers={'authorization' : KEY,
                                  'content-type' : 'application/json'},
@@ -30,6 +30,6 @@ def move(x=57, y=135, idd=ee7f:4e3f:8236:67d4:fe08:af2:6acf:ebaf'):
 
 
 
-pprint.pprint()
+pprint.pprint(scan_map()['fields'][135])
 
 

@@ -92,6 +92,7 @@ while True:
     element = d[key]
     if element['type'] != 'drone' and element['type'] != 'door':
       #print(element['type'], element['ip'], element['SLC'])
+      #print(element)
       pass
     else:
       print(element['type'], element['ip'])

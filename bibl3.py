@@ -97,13 +97,32 @@ def attack(player_server='ee7f:4e3f:8236:67d4:fe08:af2:6acf:ebaf',
 ##  print('______')
 
 
-
-#print(openn('3f9f:188c:d48f:cc55:8957:938b:25b6:3d09'))
+##d = devices()['devices']
+##for key in d.keys():
+##  element = d[key]
+##  if element['type'] == 'door':
+##    print(openn(element['ip']))
 
 while True:
   d = devices()['devices']
-  drone_id = '43dd:52a1:61c:d829:a8ec:bd05:23d4:284b'
+  drone_id = 'ba11:bb21:e500:b4fd:1ce1:ca89:eb77:7e85'
   x, y = d[drone_id]['position']['x'], d[drone_id]['position']['y']
 
-  print(move(x=x-1, y=y, idd=drone_id))
-  time.sleep(0.2)
+  print(move(x=x+1, y=y, idd=drone_id))
+  time.sleep(0.5)
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+    
+    

@@ -3,7 +3,7 @@ import json
 from pprint import pprint
 import time
 
-from word import data
+from word3 import data
 
 TOKEN = 'QilxtiFyW3wvUE12N1ClKdsejTpShfFA/aG33kJOPJ3zdZe9tRrqFrUdFRaBgb48zSs='
 
@@ -30,7 +30,7 @@ def build(data):
   return result.content
 
 
-idd = 'pavel_and_nikita_was_here_2'
+idd = 'pavel_and_nikita_was_here_rtyrty6'
 
 data = {
   "towerId": idd,

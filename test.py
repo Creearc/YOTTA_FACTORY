@@ -30,7 +30,7 @@ def build(data):
   return result.content
 
 
-idd = 'pavel_and_nikita_was_here'
+idd = 'pavel_and_nikita_was_here_2'
 
 data = {
   "towerId": idd,

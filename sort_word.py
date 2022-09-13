@@ -14,3 +14,7 @@ sort_word = sorted(words, key=len)
 sort_word.reverse()
 
 pprint(sort_word)
+
+#for word in sort_word:
+#    with open(r"words.txt", "a") as f:
+#        f.write(word + '\n')

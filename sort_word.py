@@ -2,10 +2,6 @@ import json
 from pprint import pprint
 
 
-def get_min_len_word(string_list):
-    return sorted(string_list, key=len)
-
-
 with open(r"data.json", "r", encoding='utf-8') as f:
     data = json.load(f)
 

@@ -15,6 +15,7 @@ sort_word.reverse()
 
 pprint(sort_word)
 
-#for word in sort_word:
-#    with open(r"words.txt", "a") as f:
-#        f.write(word + '\n')
+for word in sort_word:
+    if word[len(word)-1] != 'ь':
+        with open(r"words.txt", "a") as f:
+            f.write(word + '\n')

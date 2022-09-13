@@ -30,14 +30,14 @@ def build(data):
   return result.content
 
 
-idd = 'patower123vel2'
+idd = 'pavel_and_nikita_was_here'
 
 data = {
   "towerId": idd,
   "letters": data
 }
 
-#pprint(build(data))
+pprint(build(data))
 
 print(time.ctime())
 

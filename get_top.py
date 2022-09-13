@@ -10,6 +10,5 @@ def top():
   return result.content
 
 
-while True:
-    pprint(top())
-    time.sleep(60.0)
+
+pprint(top())

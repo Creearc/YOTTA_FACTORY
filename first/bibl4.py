@@ -97,6 +97,9 @@ while True:
     try:
       net = netscan()['netscan']
       for key in net.keys():
+        if not(my_servers[key][2] is None):
+          pass
+          #continue
         if key == 'ee7f:4e3f:8236:67d4:fe08:af2:6acf:ebaf':
           if i == 0:
             mn_ip = 'b452:8512:7e84:2ee1:2efa:106a:3a45:38e2'
@@ -123,10 +126,10 @@ while True:
           for c in coords:
             if element['userIp'] != my_key:
               if abs(element['position']['x'] - c[0]) < 2 and abs(element['position']['y'] - c[1]) < 2:
-                if my_servers[key][0] != element['ip']:
-                  print('drone attack', attack(key, element['ip']), element['ip'], element['SLC'])
-                  time.sleep(0.12)
-                drone_attack = True
+                if my_servers[key][2] != element['ip'] and not (element['userIp'] == my_key and element['SLC'] > 40):
+                  print('drone attack', element['SLC'], attack(key, element['ip']), element['ip'])
+                  time.sleep(delay)
+                  drone_attack = True
                 
 
           if drone_attack:
@@ -136,29 +139,28 @@ while True:
             if mn_ip is None or mn > element['SLC']:
               mn = element['SLC']
               mn_ip = element
-              if mx_ip is None:
-                mx_ip = mn_ip
               
           else:
             dist = math.sqrt((my_servers[key][0] - element['position']['x']) ** 2 + (my_servers[key][1] - element['position']['y']) ** 2)
             if mx_ip is None or mx_dist < dist:
               mx_dist = dist
               mx_ip = element
-              if mn_ip is None:
-                mn_ip = mx_ip
 
         if drone_attack:
           continue
-          
-        if mn < 40 and not(mn_ip['ip'] in servs_to_heal):
-          if my_servers[key][0] != mn_ip['ip']:
-            print('heal', attack(key, mn_ip['ip']), mn_ip['ip'], mn_ip['SLC'])
-            servs_to_heal.add(mn_ip['ip'])
-            time.sleep(0.12)
-        else:
-          if my_servers[key][0] != mx_ip['ip']:
-            print('attack', attack(key, mx_ip['ip']), mx_ip['ip'], mx_ip['SLC'])
-            time.sleep(0.12)
+
+        if not(mn_ip is None):
+          if (mn < 35 and not(mn_ip['ip'] in servs_to_heal)) or (mx_ip is None and mn < 45):
+            if my_servers[key][2] != mn_ip['ip'] and mn_ip['userIp'] == my_key:
+              print('heal', mn_ip['SLC'], attack(key, mn_ip['ip']), mn_ip['ip'])
+              servs_to_heal.add(mn_ip['ip'])
+              time.sleep(delay)
+              continue
+        
+        if not(mx_ip is None):
+          if my_servers[key][2] != mx_ip['ip'] and mx_ip['userIp'] != my_key:
+            print('attack', mx_ip['SLC'], attack(key, mx_ip['ip']), mx_ip['ip'])
+            time.sleep(delay)
         
     except Exception as e:
       print(e)

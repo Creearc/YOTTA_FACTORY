@@ -105,7 +105,7 @@ def attack(player_server='ee7f:4e3f:8236:67d4:fe08:af2:6acf:ebaf',
 
 while True:
   d = devices()['devices']
-  drone_id = 'ba11:bb21:e500:b4fd:1ce1:ca89:eb77:7e85'
+  drone_id = 'bce1:c48c:4ebd:3eaa:2978:e4b9:5bd9:c213'
   x, y = d[drone_id]['position']['x'], d[drone_id]['position']['y']
 
   print(move(x=x+1, y=y, idd=drone_id))

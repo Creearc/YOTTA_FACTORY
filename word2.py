@@ -113,10 +113,10 @@ for i in range(len(word)):
 
 word = 'индивидуализирование'.upper()
 for i in range(len(word)):
-    tmp = {"name" : word[i], "x" : 4, "y" : 1, "z" : len(word) - i - 1}
+    tmp = {"name" : word[i], "x" : 4, "y" : 3, "z" : len(word) - i - 1}
     data.append(tmp)
 
 word = 'одиннадцатиклассница'.upper()
 for i in range(len(word)):
-    tmp = {"name" : word[i], "x" : 4, "y" : 3, "z" : len(word) - i - 1}
+    tmp = {"name" : word[i], "x" : 3, "y" : 4, "z" : len(word) - i - 1}
     data.append(tmp)

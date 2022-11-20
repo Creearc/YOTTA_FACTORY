@@ -120,3 +120,14 @@ word = 'одиннадцатиклассница'.upper()
 for i in range(len(word)):
     tmp = {"name" : word[i], "x" : 3, "y" : 4, "z" : len(word) - i - 1}
     data.append(tmp)
+    
+#---------------------------------------------------------------------------------------------
+word = 'выкристаллизовывание'.upper()
+for i in range(len(word)):
+    tmp = {"name" : word[i], "x" : 1, "y" : 0, "z" : len(word) - i - 1}
+    data.append(tmp)
+
+word = 'одиннадцатиклассница'.upper()
+for i in range(len(word)):
+    tmp = {"name" : word[i], "x" : 0, "y" : 1, "z" : len(word) - i - 1}
+    data.append(tmp)
